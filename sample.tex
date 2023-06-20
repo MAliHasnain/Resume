@@ -1,0 +1,246 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.5, 3 Nov 2022) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+\usepackage{hyperref}
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Muhammad Ali Hasnain}
+\tagline{Rising Sophomore at NED University}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{"profile.png"}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{hasnainali333050@gmail.com}
+  \phone{+92312-2513849}
+  \location{Karachi, Pakistan}
+  \linkedin{mahasnain}
+  \github{MAliHasnain}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemized environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column parasol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{EDUCATION}
+
+\cvevent{Computer Systems Engineering Undergraduate Student }{NED University Of Engineering And Technology}{October 2021 -- October 2025}{Karachi, Pakistan}
+
+
+A list of all courses taken is available on \href{https://www.linkedin.com/in/mahasnain/details/courses/}{LinkedIn}
+
+\divider
+
+\cvevent{Intermediate - Pre Engineering}{Adamjee Govt. Science College}{Sep 2019 -- Sep 2021}{Karachi, Pakistan}
+
+\cvsection{Projects}
+
+\cvevent{}{\href{https://github.com/MAliHasnain/Potato-Disease-classification}{Potato Disease Classification}}{}{}
+\begin{itemize}
+\item Developed an end-to-end project utilizing CNN for accurate potato leaf classification.
+\item Created a prototype web app with FastAPI backend and React.js frontend.
+\item Leveraged machine learning to identify leaf issues in the agricultural industry.
+\end{itemize}
+
+\divider
+\cvevent{}{\href{https://github.com/MAliHasnain/Census-Data-Preprocessing}{Census Dataset Data Pre processing}}{}{}
+\begin{itemize}
+\item completed a data preprocessing project on a US census dataset obtained from Kaggle.
+\item Demonstrated proficiency in data manipulation and preparation techniques.
+\item Applied data preprocessing methods to clean, transform, and format the census dataset.
+\end{itemize}
+
+\divider
+\cvevent{}{\href{https://github.com/MAliHasnain/Online_Shoping_cart}{Online Shopping Cart}}{}{}
+\begin{itemize}
+\item Led a team of three in the development of a user-friendly online shopping application.
+\item Implemented object-oriented programming principles to create a seamless order placement process.
+\item Collaboratively designed and built the application, ensuring a user-friendly and intuitive experience for customers.
+\end{itemize}
+
+\divider
+\cvevent{}{\href{https://github.com/raza33010/Quiz-Game}{Quiz Game}}{}{}
+\begin{itemize}
+\item Designed a user interface for a quiz game using procedural programming techniques.
+\item Implemented subject-specific quiz questions and answers in the game.
+\item Developed functionality to provide instant feedback and results based on user performance.
+\end{itemize}
+
+\medskip
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Skills:}
+
+\cvskill{Programming Language}{4}
+Python Language
+
+\divider
+
+\cvskill{Data Analysis }{4}
+Data validation, cleaning, preprocessing, visualization, statistical analysis, exploratory data analysis
+
+\divider
+
+\cvskill{Machine Learning}{3.5} %% Supports X.5 values.
+Predictive analysis, supervised learning, unsupervised learning
+
+\divider
+
+\cvskill{Deep Learning}{3}
+Model building and training, Artificial Neural Networks, Convolutional Neural Networks
+
+\divider
+
+\cvskill{Tools and Software}{4}
+Python libraries (Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn, TensorFlow, Scipy ), Latex, MS Office, Canva, Git, SQL.
+
+
+
+\cvsection{Certifications }
+
+\cvevent{}{DataCamp: }{}{}
+Introduction to Numpy, Joining Data with pandas, Data Manipulation with pandas, Data Cleaning in Python, Introduction to statistics in Python, Data Visualization with Matplotlib, Introduction and Intermediate Data Visualization with Seaborn, Importing Data in Python, Exploratory Data Analysis in Python.
+
+Introduction to regression with stats models, Supervised Learning, Unsupervised Learning, and Tree-Based Models in Python.
+
+\cvevent{}{Edlab: }{}{}
+Active Learning, Classroom Management, Bloom's Taxonomy.
+
+\divider
+
+All certificates received are available on \href{https://www.linkedin.com/in/mahasnain/details/certifications/}{LinkedIn}
+
+\cvsection{Awards}
+
+\cvevent{}{Academic Scholarship: }{}{}
+\begin{itemize}
+    \item Received a full four-year merit-based academic scholarship from the NED Alumni Association South California (NEDAASC), covering all tuition expenses.
+
+\end{itemize}
+
+
+
+
+
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+
+
+% \divider
+
+
+
+
+\end{paracol}
+
+
+\end{document}
